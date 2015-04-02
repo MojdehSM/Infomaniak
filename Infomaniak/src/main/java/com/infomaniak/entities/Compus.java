@@ -21,11 +21,14 @@ public class Compus {
 		return CapCompus;
 	}
 
-	public void getStudent() {
-		for (Student stud : students) {
-
-			System.out.println();
+	public void addStudent(Student s) throws Exception{
+		if (CapCompus > 0) {
+			students.add(s);
+		} else {
+			throw new IllegalArgumentException("Capacity of Compus : " 
+                    +getCapCompus());
 		}
+		
 	}
 
 }

@@ -17,5 +17,10 @@ public class Student {
 	public int getIdS() {
 		return idS;
 	}
+	
+	@Override
+	   public String toString(){
+	      return "StudentPrenom :"+getPrenomS()+", StudentNom :"+getNomS()+ "StudentID :"+getIdS();
+	   }
 
 }
