@@ -2,13 +2,15 @@ package com.infomaniak.entities;
 
 import java.util.ArrayList;
 
+import com.infomaniak.exceptions.FullCampusException;
+
 public class Compus {
 
 	String compusCity;
 	String compusRegion;
 	int capCompus;
-	ArrayList<Student> studentsC;
-	ArrayList<Teacher> teachersC;
+	ArrayList<Student> studentsC = new ArrayList<>();
+	ArrayList<Teacher> teachersC = new ArrayList<>();
 
 	public Compus(String cC, String cR, int capC) {
 		this.compusCity = cC;
@@ -24,8 +26,6 @@ public class Compus {
 			new FullCampusException("Capacity of Compus :" + getCapCompus());
 		}
 	}
-
-	
 
 	public void removeStudent(Student s) {
 		studentsC.remove(s);
@@ -51,17 +51,6 @@ public class Compus {
 
 	public int getCapCompus() {
 		return capCompus;
-	}
-
-	public class FullCampusException extends RuntimeException {
-
-		public FullCampusException() {
-			super();
-		}
-
-		public FullCampusException(String s) {
-			super(s);
-		}
 	}
 
 	@Override
